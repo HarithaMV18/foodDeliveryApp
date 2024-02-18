@@ -1,0 +1,22 @@
+.header{
+    border: 1px solid orangered;
+}
+.header nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0px 15px;
+}
+nav>img{
+    width: 100px;
+}
+nav>.nav-items{
+    flex-basis: 500px;
+}
+ nav>.nav-items ul {
+list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
