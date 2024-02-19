@@ -1,18 +1,26 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import logo from '../../images/Fast-Food-icon.png'
 import './header.css'
+import { Link } from 'react-router-dom'
 
 const Header = () => {
+  const [login,setLogin]=useState(false)
+  const loginDetails=(e)=>{
+    setLogin(!login)
+  }
+// useEffect(()=>{
+//   console.log("useEffect")
+// })
   return (
     <div className='header'>
         <nav>
             <img src={logo} alt="logo" />
             <div className="nav-items">
                 <ul>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Contact</li>
-                    <li><button>Login</button></li>
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/about">About</Link></li>
+                    <li><Link to="/contact">Contact</Link></li>
+                    <li><button onClick={()=>loginDetails()}>{login?"sign out":"sign in"}</button></li>
                 </ul>
             </div>
             

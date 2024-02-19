@@ -1,6 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from './src/App'
+import App from './src/App';
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import About from "./src/components/about/About";
+import Error from "./src/components/error/Error";
+import Contact from "./src/components/contact/Contact";
+import MainContainer from "./src/components/mainContainer/MainContainer";
 // const ele = React.createElement(
 //   "div",
 //   { className: "header" },
@@ -11,5 +16,29 @@ import App from './src/App'
 //   ])
 // );
 // console.log(ele);
+const appRouter=createBrowserRouter([
+    {
+        path:"/",
+        element:<App/>,
+        children:[
+            {
+                path:"/",
+                element: <MainContainer/>,
+                
+            },   
+        {
+            path:"/about",
+            element:<About/>,
+            
+        },
+        {
+            path:"/contact",
+            element:<Contact/>
+        }],
+        errorElement:<Error/>
+        
+    },
+    
+])
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<App/>);
+root.render(<RouterProvider router={appRouter}/>);
