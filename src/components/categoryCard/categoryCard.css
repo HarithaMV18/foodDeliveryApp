@@ -1,0 +1,6 @@
+.categories-list{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-bottom: 15px solid #f1f1f6;
+}

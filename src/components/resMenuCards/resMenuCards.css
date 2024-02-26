@@ -1,0 +1,19 @@
+.menu-card{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #f1f1f6;
+}
+.card-details{
+    width: 40vw;
+}
+.card-img{
+    width:130px
+}
+.card-img img{
+    width: 100%;
+}
+.menu-card-desc{
+    font-size: 15px;
+    color: #aeaeae;
+}

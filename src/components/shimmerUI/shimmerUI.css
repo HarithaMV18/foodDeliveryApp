@@ -1,0 +1,29 @@
+.shimmer-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 60px;
+    gap: 20px;
+}
+.shimmer,.shimmer--sec2{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.shimmer--sec1{
+    width: 300px;
+    height: 150px;
+    border-radius: 10px;
+    background-color: #a9a4a4;
+}
+.shimmer-subsec1{
+    width: 200px;
+    height: 10px;
+    background-color: #a9a4a4;
+}
+.shimmer-subsec2{
+    width: 100px;
+    height: 10px;
+    background-color: #a9a4a4;
+}

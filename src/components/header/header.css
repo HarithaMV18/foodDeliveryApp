@@ -11,12 +11,29 @@ nav>img{
     width: 100px;
 }
 nav>.nav-items{
-    flex-basis: 500px;
+   
+
+    flex-basis: 600px;
 }
  nav>.nav-items ul {
 list-style-type: none;
     display: flex;
     align-items: center;
+
     justify-content: space-between;
 
+}
+.online-indicator{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: green;
+    border-radius: 50%;
+}
+.offline-indicator{
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+    display: inline-block;
 }
