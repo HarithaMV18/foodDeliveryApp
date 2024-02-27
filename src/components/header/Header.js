@@ -13,13 +13,13 @@ const networkStats=useNetwork()
   }
 
   return (
-    <div className='header'>
+    <div className='header shadow-lg'>
         <nav className='flex items-center justify-between'>
             <img src={logo} alt="logo" className='w-20'/>
             <div className="nav-items basis-96">
               
                 <ul className='flex items-center justify-between '>
-                  <li>online status:{networkStats?"✅":"🔴"}</li>
+                  <li>online status:{networkStats?"🟢":"🔴"}</li>
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/about">About</Link></li>
                     <li><Link to="/contact">Contact</Link></li>

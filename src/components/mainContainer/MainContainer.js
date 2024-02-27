@@ -61,8 +61,8 @@ console.log(cardData.data)
   const networkStats=useNetwork()
   if(!networkStats) return <NetworkStats/>
   return (
-    resData.length===0?<ShimmerUI/>:<div className="container">
-      <div className="search-section">
+    resData.length===0?<ShimmerUI/>:<div className="container my-3">
+      <div className="search-section w-screen">
         <input
           type="text"
           name="search"
@@ -70,14 +70,15 @@ console.log(cardData.data)
           placeholder="search restaurants..."
           value={searchEle}
           onChange={(e) => searchRestaurants(e)}
+          className="shadow-lg w-5/12 m-auto block border border-gray-400 rounded px-2 py-1"
         />
       </div>
-      <div className="top-rated">
-        <button id="top-rated-res" onClick={()=>topRated()}>
+      <div className="flex items-center justify-center my-4  ">
+        <button id="top-rated-res" onClick={()=>topRated()} className="border border-gray-400 rounded-md bg-white shadow-lg px-2 py-1">
           Top Rated
         </button>
       </div>
-      <div className="sub-container">
+      <div className="sub-container flex flex-wrap gap-3 justify-center">
         {searchList.map((item) => {
           return <Link to={"/restaurants/"+item.info.id} key={item.info.id}><CardContainer  resData={item.info} /></Link>;
         })}

@@ -5,9 +5,9 @@ import { IMG_URL } from "../../utils/constents";
 const CardContainer = ({ resData }) => {
   
   return (
-    <div className="card">
-      <div className="res-img">
-        <img src={IMG_URL + resData.cloudinaryImageId} alt="" />
+    <div className="card hover:scale-90 ease-linear duration-500">
+      <div className="res-img w-52 h-32 rounded-lg overflow-hidden">
+        <img src={IMG_URL + resData.cloudinaryImageId} alt="" className="w-full h-full object-cover"/>
       </div>
       <div className="res-details">
         <h3>{resData.name.length>20?resData.name.slice(0,21)+"...":resData.name}</h3>
