@@ -1,6 +1,6 @@
 
 import ShimmerUI from "../shimmerUI/ShimmerUI";
-import "./restaurantMenu.css";
+
 import CategoryCard from "../categoryCard/CategoryCard";
 import { useParams } from "react-router-dom";
 import useRestaurantMenuGetData from "../../utils/useRestaurantMenuGetData";

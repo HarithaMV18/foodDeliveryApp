@@ -1,5 +1,5 @@
 import React from "react";
-import './cardContainer.css'
+
 import { IMG_URL } from "../../utils/constents";
 
 const CardContainer = ({ resData }) => {

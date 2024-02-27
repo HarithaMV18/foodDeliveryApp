@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import logo from '../../images/Fast-Food-icon.png'
-import './header.css'
+
 import { Link } from 'react-router-dom'
 import useNetwork from '../../utils/useNetwork'
 
@@ -14,12 +14,12 @@ const networkStats=useNetwork()
 
   return (
     <div className='header'>
-        <nav>
-            <img src={logo} alt="logo" />
-            <div className="nav-items">
+        <nav className='flex items-center justify-between'>
+            <img src={logo} alt="logo" className='w-20'/>
+            <div className="nav-items basis-96">
               
-                <ul>
-                  <li>online status: <div className={networkStats?"online-indicator":"offline-indicator"}></div></li>
+                <ul className='flex items-center justify-between '>
+                  <li>online status:{networkStats?"✅":"🔴"}</li>
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/about">About</Link></li>
                     <li><Link to="/contact">Contact</Link></li>

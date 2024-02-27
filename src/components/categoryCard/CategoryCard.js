@@ -1,4 +1,4 @@
-import './categoryCard.css'
+
 import ResMenuCards from "../resMenuCards/ResMenuCards";
 const CategoryCard = ({ categoryCards }) => {
   return categoryCards.map((item, index) => {

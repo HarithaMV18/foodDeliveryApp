@@ -1,4 +1,4 @@
-import './shimmerUI.css'
+
 const ShimmerUI=()=>{
     return(
         <div className="shimmer-container">

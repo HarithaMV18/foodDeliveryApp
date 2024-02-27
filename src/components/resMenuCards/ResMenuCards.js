@@ -1,5 +1,5 @@
 import { IMG_URL } from "../../utils/constents";
-import './resMenuCards.css'
+
 const ResMenuCards=({menuItems})=>{
  
    

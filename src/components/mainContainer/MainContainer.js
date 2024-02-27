@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./mainContainer.css";
+
 import CardContainer from "../cardContainer/CardContainer";
 import ShimmerUI from "../shimmerUI/ShimmerUI";
 import { Link } from "react-router-dom";
