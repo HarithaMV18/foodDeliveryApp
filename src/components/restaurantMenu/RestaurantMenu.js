@@ -18,10 +18,10 @@ const menuData=useRestaurantMenuGetData(resId)
   const categoryCards = menuData[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
 
   return (
-    <div className="res-menu">
-      <h3>{name}</h3>
-      <p>{cuisines.join(", ")}</p>
-      <p>{areaName}</p>
+    <div className="res-menu w-3/5 m-auto">
+      <h3 className="font-bold">{name}</h3>
+      <p className="text-xs text-[#7e808c]">{cuisines.join(", ")}</p>
+      <p className="text-xs text-[#7e808c]">{areaName}</p>
       <CategoryCard categoryCards={categoryCards} />
     </div>
   );

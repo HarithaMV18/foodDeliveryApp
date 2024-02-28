@@ -62,7 +62,7 @@ console.log(cardData.data)
   if(!networkStats) return <NetworkStats/>
   return (
     resData.length===0?<ShimmerUI/>:<div className="container my-3">
-      <div className="search-section w-screen">
+      <div className="search-section w-screen  font-['Libre Baskerville']">
         <input
           type="text"
           name="search"

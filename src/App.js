@@ -7,7 +7,7 @@ import { Outlet } from 'react-router-dom'
 const App = () => {
 
   return (
-    <div className="app overflow-hidden">
+    <div className="app overflow-hidden font-['Montserrat']">
       <Header/>
       <Outlet/>
     </div>
