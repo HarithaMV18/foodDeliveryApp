@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import CardContainer from "../cardContainer/CardContainer";
+import CardContainer,{addOffersToRestaurant} from "../cardContainer/CardContainer";
 import ShimmerUI from "../shimmerUI/ShimmerUI";
 import { Link } from "react-router-dom";
 import { MAIN_URL } from "../../utils/constents";
@@ -11,7 +11,9 @@ const MainContainer = () => {
   const [resData, setResData] = useState([]);
   const [searchEle, setSearchEle] = useState("");
   const [searchList, setSearchList] = useState([]);
- 
+  
+ const OfferedRestaurants=addOffersToRestaurant(CardContainer)
+
   //search Restaurants --start
   const searchRestaurants = (e) => {
     setSearchEle(e.target.value);
@@ -41,7 +43,7 @@ const MainContainer = () => {
         );
       
         const cardData = await response.json();
-console.log(cardData.data)
+
         setResData(
           cardData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
             ?.restaurants
@@ -59,9 +61,10 @@ console.log(cardData.data)
 
   },[]);
   const networkStats=useNetwork()
+ 
   if(!networkStats) return <NetworkStats/>
   return (
-    resData.length===0?<ShimmerUI/>:<div className="container my-3">
+    resData.length===0?<ShimmerUI/>:<div className="container my-3 m-auto">
       <div className="search-section w-screen  font-['Libre Baskerville']">
         <input
           type="text"
@@ -70,17 +73,24 @@ console.log(cardData.data)
           placeholder="search restaurants..."
           value={searchEle}
           onChange={(e) => searchRestaurants(e)}
-          className="shadow-lg w-5/12 m-auto block border border-gray-400 rounded px-2 py-1"
+          className="shadow-lg w-5/12 m-auto block border border-gray-400 rounded px-2 py-1 text-xs"
         />
       </div>
       <div className="flex items-center justify-center my-4  ">
-        <button id="top-rated-res" onClick={()=>topRated()} className="border border-gray-400 rounded-md bg-white shadow-lg px-2 py-1">
+        <button id="top-rated-res " onClick={()=>topRated()} className="border border-gray-400 rounded-md bg-white shadow-lg px-1 py-1 text-xs">
           Top Rated
         </button>
       </div>
       <div className="sub-container flex flex-wrap gap-3 justify-center">
-        {searchList.map((item) => {
-          return <Link to={"/restaurants/"+item.info.id} key={item.info.id}><CardContainer  resData={item.info} /></Link>;
+        
+        {
+        searchList.map((item) => {
+          return <Link to={"/restaurants/"+item.info.id} key={item.info.id}>
+            {item.info.aggregatedDiscountInfoV3?<OfferedRestaurants resData={item.info}/>:
+
+             <CardContainer  resData={item.info} />
+          }
+            </Link>;
         })}
       </div>
     </div>

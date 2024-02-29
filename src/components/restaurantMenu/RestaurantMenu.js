@@ -14,8 +14,9 @@ const menuData=useRestaurantMenuGetData(resId)
   if (menuData.length === 0) {
     return <ShimmerUI />;
   }
-  const { name, cuisines, areaName } = menuData[2]?.card?.card?.info;
-  const categoryCards = menuData[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
+ 
+  const { name, cuisines, areaName } = menuData[0]?.card?.card?.info;
+  const categoryCards = menuData[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
 
   return (
     <div className="res-menu w-3/5 m-auto">

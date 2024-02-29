@@ -1,7 +1,7 @@
 import { IMG_URL } from "../../utils/constents";
 
 const ResMenuCards=({menuItems})=>{
- 
+
    
     return(
         <div  className="menu-card flex items-center justify-between border-b-2 border-gray-300 py-4 last:border-b-0">

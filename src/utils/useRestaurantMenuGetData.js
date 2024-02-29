@@ -9,7 +9,7 @@ const useRestaurantMenuGetData = (resId) => {
         const response = await fetch(CARD_URL+resId);
 
         const json = await response.json();
-        
+    
         setMenuData(json.data.cards)
        
       } catch (err) {
