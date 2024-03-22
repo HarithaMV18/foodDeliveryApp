@@ -3,7 +3,7 @@ import React from "react";
 import { IMG_URL } from "../../utils/constents";
 
 const CardContainer = ({ resData }) => {
-  console.log(resData)
+
   return (
     <div className="card hover:scale-90 ease-linear duration-200  ">
       <div className="res-img w-52 h-32 rounded-lg overflow-hidden relative">

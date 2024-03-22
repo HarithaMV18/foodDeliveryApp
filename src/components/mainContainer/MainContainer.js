@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState,useContext } from "react";
 
 import CardContainer,{addOffersToRestaurant} from "../cardContainer/CardContainer";
 import ShimmerUI from "../shimmerUI/ShimmerUI";
@@ -6,8 +6,9 @@ import { Link } from "react-router-dom";
 import { MAIN_URL } from "../../utils/constents";
 import useNetwork from "../../utils/useNetwork";
 import NetworkStats from "../networkHook/NetworkStats";
-
+import UserContext from "../../utils/UserContext";
 const MainContainer = () => {
+  const {loggedIn,setUserName}=useContext(UserContext)
   const [resData, setResData] = useState([]);
   const [searchEle, setSearchEle] = useState("");
   const [searchList, setSearchList] = useState([]);
@@ -52,6 +53,7 @@ const MainContainer = () => {
           cardData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
             ?.restaurants
         );
+        
       } catch (err) {
         console.log(err.message);
       }
@@ -63,7 +65,9 @@ const MainContainer = () => {
   const networkStats=useNetwork()
  
   if(!networkStats) return <NetworkStats/>
+
   return (
+    
     resData.length===0?<ShimmerUI/>:<div className="container my-3 m-auto">
       <div className="search-section w-screen  font-['Libre Baskerville']">
         <input
@@ -80,6 +84,9 @@ const MainContainer = () => {
         <button id="top-rated-res " onClick={()=>topRated()} className="border border-gray-400 rounded-md bg-white shadow-lg px-1 py-1 text-xs">
           Top Rated
         </button>
+      </div>
+      <div className="flex items-center justify-center my-4  ">
+      <input type="text" className="border border-black" value={loggedIn} onChange={(e)=>setUserName(e.target.value)}/>
       </div>
       <div className="sub-container flex flex-wrap gap-3 justify-center">
         

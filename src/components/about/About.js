@@ -1,4 +1,4 @@
-import AboutClass from './AboutClass'
+import AboutClass from './AboutClass';
 // import AboutFun from './AboutFun';
 import React from 'react';
 class About extends React.Component{
@@ -13,7 +13,7 @@ class About extends React.Component{
         console.log("Parent render")
         return(
             <div>
-               <AboutClass name="Haritha class" location="Bengaluru"/>
+               <AboutClass />
                
             </div>
             

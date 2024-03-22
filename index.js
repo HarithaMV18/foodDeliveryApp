@@ -7,6 +7,7 @@ import Error from "./src/components/error/Error";
 import Contact from "./src/components/contact/Contact";
 import MainContainer from "./src/components/mainContainer/MainContainer";
 import RestaurantMenu from "./src/components/restaurantMenu/RestaurantMenu";
+import CartPage from "./src/components/cartPage/CartPage";
 // const ele = React.createElement(
 //   "div",
 //   { className: "header" },
@@ -35,6 +36,10 @@ const appRouter=createBrowserRouter([
         {
             path:"/contact",
             element:<Contact/>
+        },
+        {
+            path:"/cart",
+            element:<CartPage/>
         },
         {
             path:"/restaurants/:resId",
