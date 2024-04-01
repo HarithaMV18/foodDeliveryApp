@@ -1,4 +1,4 @@
-import React, { useEffect, useState,useContext } from "react";
+import React, { useEffect, useState } from "react";
 
 import CardContainer,{addOffersToRestaurant} from "../cardContainer/CardContainer";
 import ShimmerUI from "../shimmerUI/ShimmerUI";
@@ -6,9 +6,9 @@ import { Link } from "react-router-dom";
 import { MAIN_URL } from "../../utils/constents";
 import useNetwork from "../../utils/useNetwork";
 import NetworkStats from "../networkHook/NetworkStats";
-import UserContext from "../../utils/UserContext";
+
 const MainContainer = () => {
-  const {loggedIn,setUserName}=useContext(UserContext)
+
   const [resData, setResData] = useState([]);
   const [searchEle, setSearchEle] = useState("");
   const [searchList, setSearchList] = useState([]);
@@ -19,7 +19,7 @@ const MainContainer = () => {
   const searchRestaurants = (e) => {
     setSearchEle(e.target.value);
     const searchFilter = resData.filter((item) => {
-      console.log(item.info.name)
+     
       return item.info.name
         .toLowerCase()
         .includes(e.target.value.toLowerCase());
@@ -68,8 +68,8 @@ const MainContainer = () => {
 
   return (
     
-    resData.length===0?<ShimmerUI/>:<div className="container my-3 m-auto">
-      <div className="search-section w-screen  font-['Libre Baskerville']">
+    resData?.length===0?<ShimmerUI/>:<div className="container my-3 m-auto ">
+      <div className="search-section   font-['Libre Baskerville']">
         <input
           type="text"
           name="search"
@@ -77,7 +77,7 @@ const MainContainer = () => {
           placeholder="search restaurants..."
           value={searchEle}
           onChange={(e) => searchRestaurants(e)}
-          className="shadow-lg w-5/12 m-auto block border border-gray-400 rounded px-2 py-1 text-xs"
+          className="shadow-lg lg:w-6/12 md:w-8/12 sm:w-9/12 w-10/12 m-auto block border border-gray-400 rounded px-2 py-1 text-xs"
         />
       </div>
       <div className="flex items-center justify-center my-4  ">
@@ -86,14 +86,15 @@ const MainContainer = () => {
         </button>
       </div>
       <div className="flex items-center justify-center my-4  ">
-      <input type="text" className="border border-black" value={loggedIn} onChange={(e)=>setUserName(e.target.value)}/>
+      {/* <input type="text" className="border border-black" value={loggedIn} onChange={(e)=>setUserName(e.target.value)}/> */}
       </div>
       <div className="sub-container flex flex-wrap gap-3 justify-center">
         
         {
-        searchList.map((item) => {
+        searchList?.map((item) => {
           return <Link to={"/restaurants/"+item.info.id} key={item.info.id}>
-            {item.info.aggregatedDiscountInfoV3?<OfferedRestaurants resData={item.info}/>:
+            {
+            item.info.aggregatedDiscountInfoV3?<OfferedRestaurants resData={item.info}/>:
 
              <CardContainer  resData={item.info} />
           }

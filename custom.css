@@ -1,0 +1,10 @@
+@media only screen and (width <= 480px){
+   
+    .Toastify__toast-container {
+        @apply w-[70%] text-xs ;
+
+    }
+    .Toastify__toast-container--bottom-center{
+        @apply translate-x-[20%] pb-2 
+    }
+}

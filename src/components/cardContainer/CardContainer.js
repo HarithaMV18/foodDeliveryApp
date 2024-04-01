@@ -38,15 +38,17 @@ const CardContainer = ({ resData }) => {
 //Takes CardContainer component as input and if item has offer it labels on top of item
 export const addOffersToRestaurant = (CardContainer) => {
   return (resData) => {
+    
     return (
       <div  className="relative overflow-hidden hover:scale-90 ease-linear duration-200" >
 
         <CardContainer {...resData} className="relative"/>
-        <div className="absolute z-50  pl-3 pb-3 top-[6.50rem] text-white font-extrabold  ">
+        {resData?.resData?.aggregatedDiscountInfoV3?.header && resData?.resData?.aggregatedDiscountInfoV3?.subHeader &&<div className="absolute z-50  pl-3 pb-3 top-[6.50rem] text-white font-extrabold  ">
+          
           {resData?.resData?.aggregatedDiscountInfoV3?.header +
             " " +
             resData?.resData?.aggregatedDiscountInfoV3?.subHeader}
-        </div>
+        </div>}
    
       </div>
     );

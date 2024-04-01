@@ -2,9 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from './src/App';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import About from "./src/components/about/About";
+
 import Error from "./src/components/error/Error";
-import Contact from "./src/components/contact/Contact";
+
 import MainContainer from "./src/components/mainContainer/MainContainer";
 import RestaurantMenu from "./src/components/restaurantMenu/RestaurantMenu";
 import CartPage from "./src/components/cartPage/CartPage";
@@ -28,15 +28,15 @@ const appRouter=createBrowserRouter([
                 element: <MainContainer/>,
                 
             },   
-        {
-            path:"/about",
-            element:<About/>,
+        // {
+        //     path:"/about",
+        //     element:<About/>,
             
-        },
-        {
-            path:"/contact",
-            element:<Contact/>
-        },
+        // },
+        // {
+        //     path:"/contact",
+        //     element:<Contact/>
+        // },
         {
             path:"/cart",
             element:<CartPage/>

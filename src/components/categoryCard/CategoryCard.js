@@ -4,26 +4,21 @@ import MenuAccordian from "../menuAccordian/MenuAccordian";
 const CategoryCard = ({ categoryCards }) => {
   //lifting the state up
   const [menuCollapse, setMenuCollapse] = useState(null);
-  const [booleanTrue, setBooleanTrue] = useState(true);
+  const [toggle, setToggle] = useState(false);
   const [booleanFalse, setBooleanFalse] = useState(false);
-
-  const handleClick = (title) => {
-    setMenuCollapse(title);
-  };
-
-  return categoryCards.map((item, index) => {
+  return categoryCards?.map((item, index) => {
+ 
     return (
-      <div
+      (item?.card?.card?.itemCards || item?.card?.card?.categories) &&  <div
         className="categories-list border-b-8 border-gray-200 py-2 "
         key={index}
       >
-        {item?.card?.card?.itemCards ? (
+        {
+        item?.card?.card?.itemCards ? (
           <MenuAccordian
             title={item.card.card.title}
             len={item?.card?.card?.itemCards?.length}
-            data={item?.card?.card?.itemCards}
-            handleMenu={() => handleClick(item.card.card.title)}
-            showMenu={item.card.card.title === menuCollapse ? true : false}
+            data={item?.card?.card?.itemCards}         
           />
         ) : (
           <h4 className="font-bold">{item.card.card.title}</h4>
@@ -41,12 +36,6 @@ const CategoryCard = ({ categoryCards }) => {
                       title={cards.title}
                       len={cards?.itemCards?.length}
                       data={cards?.itemCards}
-                      handleMenu={() => handleClick(cards.title)}
-                      showMenu={
-                        cards.title === menuCollapse
-                          ? true
-                          : false
-                      }
                     />
                   </div>
                 );
