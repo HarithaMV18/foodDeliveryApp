@@ -11,7 +11,7 @@ const menuData=useRestaurantMenuGetData(resId)
   }
   
   const { name, cuisines, areaName } = menuData[2]?.card?.card?.info;
-  const categoryCards = menuData[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
+  const categoryCards = menuData[4]?.groupedCard?menuData[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards:menuData[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
   return (
     <div className="  res-menu lg:w-3/5 md:w-4/5 sm:w-5/6 w-[90%] m-auto">
       <h3 className="font-bold">{name}</h3>

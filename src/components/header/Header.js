@@ -28,7 +28,7 @@ const Header = () => {
             <li className="hover:border-b-slate-700 hover:border-b-2 mb-2">
               <Link to="/cart">cart-{cartItemscount} items</Link>
             </li>
-            <li className="hover:border-b-slate-700 hover:border-b-2 mb-2">online status:{networkStats ? "🟢" : "🔴"}</li>
+            <li className="  mb-2">online status:{networkStats ? "🟢" : "🔴"}</li>
           </ul>
        
           

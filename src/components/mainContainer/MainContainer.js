@@ -44,15 +44,29 @@ const MainContainer = () => {
         );
       
         const cardData = await response.json();
-
-        setResData(
-          cardData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
-            ?.restaurants
-        );
-        setSearchList(
-          cardData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
-            ?.restaurants
-        );
+        
+        if(cardData?.data?.cards[1]?.card?.card?.gridElements){
+          setResData(
+            cardData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+              ?.restaurants
+          );
+          setSearchList(
+            cardData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+              ?.restaurants
+          );
+        }
+        else{
+          setResData(
+            cardData?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+              ?.restaurants
+          );
+          setSearchList(
+            cardData?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+              ?.restaurants
+          );
+        }
+      
+       
         
       } catch (err) {
         console.log(err.message);
