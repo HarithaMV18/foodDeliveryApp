@@ -2,7 +2,7 @@
   "name": "delivery-app",
   "version": "1.0.0",
   "description": "delivery service",
-  "main": "index.js",
+  
   "scripts": {
     "test": "jest",
     "start": "parcel index.html",
